@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class EasyDrops extends JavaPlugin {
 
-    private static EasyDrops instance;
+    private static EasyDrops instance = new EasyDrops();
 
     {
         ConfigurationSerialization.registerClass(BlockDrops.class);
