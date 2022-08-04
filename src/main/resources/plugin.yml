@@ -1,0 +1,9 @@
+name: EasyDrops
+version: 1.0
+main: com.gmail.relystuff.EasyDrops.EasyDrops
+api-version: 1.19
+
+commands:
+  drops:
+    description: Customize block drops!
+    permission: easydrops.drops
