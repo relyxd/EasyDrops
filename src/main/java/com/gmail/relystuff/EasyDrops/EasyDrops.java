@@ -22,6 +22,8 @@ import java.util.Map;
 
 public class EasyDrops extends JavaPlugin {
 
+    private static EasyDrops instance;
+
     {
         ConfigurationSerialization.registerClass(BlockDrops.class);
     }
@@ -41,6 +43,10 @@ public class EasyDrops extends JavaPlugin {
         initiateBlocksConfig();
         fetchBlocks();
         getLogger().info("EasyDrops has been enabled.");
+    }
+
+    public static EasyDrops getInstance() {
+        return instance;
     }
 
     private void fetchBlocks() {
