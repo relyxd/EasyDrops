@@ -77,7 +77,7 @@ public class BlockDrops implements ConfigurationSerializable {
                 additiveWeight += e.getValue();
 //                Bukkit.broadcastMessage("Random:" + r + ", additiveweight:" + additiveWeight + ", itemweight:" + e.getValue() + ", totalWeight:" + totalWeight);
                 if(additiveWeight >= r) {
-                    theseDrops.add(e.getKey());
+                    theseDrops.add(e.getKey().clone());
                     break;
                 }
             }
