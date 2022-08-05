@@ -26,7 +26,7 @@ public class BlockDrops implements ConfigurationSerializable {
 
         ArrayList<ItemStack> temp = new ArrayList<>();
 
-        for(Map.Entry e : drops.entrySet()) {
+        for(Map.Entry<ItemStack, Double> e : drops.entrySet()) {
             temp.add((ItemStack) e.getKey());
         }
 
@@ -51,7 +51,7 @@ public class BlockDrops implements ConfigurationSerializable {
 
     public boolean hasItem(ItemStack item) {
 
-        for(Map.Entry e : drops.entrySet()) {
+        for(Map.Entry<ItemStack, Double> e : drops.entrySet()) {
             if(e.getKey().equals(item)) {
                 return true;
             }
@@ -92,7 +92,7 @@ public class BlockDrops implements ConfigurationSerializable {
     public static BlockDrops deserialize(Map<String, Object> d) {
         BlockDrops b = new BlockDrops(Material.getMaterial((String) d.get("m")), (Integer) d.get("iterations"));
         HashMap<ItemStack, Double> i = (HashMap<ItemStack, Double>) d.get("drops");
-        for(Map.Entry e : i.entrySet()) {
+        for(Map.Entry<ItemStack, Double> e : i.entrySet()) {
             b.addDrop((ItemStack) e.getKey(), (Double) e.getValue());
         }
         return b;
